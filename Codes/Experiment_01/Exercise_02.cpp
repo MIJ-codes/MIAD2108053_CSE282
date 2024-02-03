@@ -9,7 +9,7 @@ struct info
     string name;
     int roll_no;
     int age;
-} student [6];//5 cant be use.
+} student [6];//5 cant be used.
 
 int main ()
 {

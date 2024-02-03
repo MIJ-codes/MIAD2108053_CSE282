@@ -17,7 +17,7 @@ struct node
 
 node *construct_sll(int nodesize)
 {
-    node *head,*current, *temp;
+    node *head, *current, *temp;
     if (nodesize == 0)
     {
         return 0;
