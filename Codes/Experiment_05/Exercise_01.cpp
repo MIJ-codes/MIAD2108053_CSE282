@@ -56,6 +56,7 @@ int main ()
     t1root -> right = new node (72);
     t1root -> left -> left = new node (12);
     t1root -> left -> right = new node (23);
+    t1root -> left -> right -> right = new node (19);
     t1root -> left -> left -> left = new node (9);
     t1root -> left -> left -> right = new node (14);
     t1root -> right -> left = new node (54);
@@ -86,7 +87,7 @@ int main ()
     cout<< endl;
 
     cout<< endl;
-    
+
     cout<< "For tree 2:" << endl;
     cout<< "Pre order traversing =";
     traverse_preorder (t2root);
