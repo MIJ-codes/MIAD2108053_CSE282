@@ -1,4 +1,4 @@
-//Find if the tree is perfect or not using the heights
+//Check if the tree is perfect or not using the heights
 
 #include<bits/stdc++.h>
 

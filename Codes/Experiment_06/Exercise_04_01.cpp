@@ -1,4 +1,4 @@
-//Find if the tree is perfect or not using boolien
+//Check if the tree is perfect or not using boolien
 
 #include<bits/stdc++.h>
 
