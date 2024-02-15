@@ -1,4 +1,4 @@
-//Check if the tree is balanced or not
+//Check if the tree is binary search tree or not
 
 #include<bits/stdc++.h>
 
@@ -18,23 +18,42 @@ struct node
     }
 };
 
-int is_balanced (node* root)
+void store_inorder (node* root, vector < int >& inorder)
 {
-    int left_height, right_height;
-
     if (root == nullptr)
     {
-        return 0;
+        return;
     }
 
-    left_height = is_balanced (root -> left);
-    right_height = is_balanced (root -> right);
+    store_inorder (root -> left, inorder);
+    inorder . push_back (root -> data);
+    store_inorder (root -> right, inorder);
+}
 
-    if (abs(left_height - right_height) > 1 || left_height == -1 || right_height == -1)
+void is_BST (node* root)
+{
+    vector < int > inorder;
+    bool result_is_BST = true;
+
+    store_inorder (root, inorder);
+
+    for (int i = 0; i < inorder.size () - 1; i++)
     {
-        return -1;
+        if (inorder[i] > inorder[i + 1])
+        {
+            result_is_BST = false;
+            break;
+        }
     }
-    return 1 + max (left_height , right_height);
+
+    if (result_is_BST)
+    {
+        cout<< "Binary search tree.";
+    }
+    else
+    {
+        cout<< "Not a binary search tree.";
+    }
 }
 
 int main ()
@@ -51,14 +70,7 @@ int main ()
     root -> right -> right = new node (76);
     root -> right -> left -> right = new node (67);
 
-    if (is_balanced (root) == -1)
-    {
-        cout<< "Not balanced.";
-    }
-    else
-    {
-        cout<< "Balanced.";
-    }
+    is_BST (root);
 
     return 0;
 }

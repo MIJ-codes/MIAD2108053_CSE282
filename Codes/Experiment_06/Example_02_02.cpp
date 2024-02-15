@@ -24,7 +24,7 @@ struct height
     int right_height;
 };
 
-height is_perfect_tree(node* root)
+height is_perfect_tree (node* root)
 {
     height depth;
 
@@ -34,11 +34,11 @@ height is_perfect_tree(node* root)
         return depth;
     }
 
-    height left_depth = is_perfect_tree(root->left);    //of left_depth where is it storing the values? in left_height or right_height
-    height right_depth = is_perfect_tree(root->right);   ////of right_depth where is it storing the values? in left_height or right_height
+    height left_depth = is_perfect_tree (root->left);    //of left_depth where is it storing the values? in left_height or right_height
+    height right_depth = is_perfect_tree (root->right);   ////of right_depth where is it storing the values? in left_height or right_height
 
-    depth.left_height = 1 + max(left_depth.left_height, left_depth.right_height);    //what happened here?
-    depth.right_height = 1 + max(right_depth.left_height, right_depth.right_height);  //what happened here?
+    depth.left_height = 1 + max (left_depth.left_height, left_depth.right_height);    //what happened here?
+    depth.right_height = 1 + max (right_depth.left_height, right_depth.right_height);  //what happened here?
 
     return depth;
 }
