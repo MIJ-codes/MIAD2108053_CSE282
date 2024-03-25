@@ -1,4 +1,4 @@
-//Finding the distance between the nodes of a graph
+//Finding the shortest distance from the source to all the nodes
 
 #include<bits/stdc++.h>
 
@@ -7,7 +7,7 @@ using namespace std;
 vector <int> adj[100];
 int Distance[100], visited[100];
 
-void Breadth_First_Search (int source)
+void BFS_distances (int source)
 {
     queue <int> q;
 
@@ -63,7 +63,7 @@ int main ()
     cout<< "Enter the source node: ";
     cin>> source;
 
-    Breadth_First_Search(source);
+    BFS_distances(source);
 
     for (i = 1; i <= n; ++i)
     {
